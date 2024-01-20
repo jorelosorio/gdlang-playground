@@ -6,7 +6,17 @@ on:
       - main
     paths:
       - 'gdlang.version'
+
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -14,7 +24,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Read GDLang Version
         id: read-version
@@ -23,7 +33,7 @@ jobs:
           echo "GDLANG_VERSION=$GDLANG_VERSION" >> $GITHUB_ENV
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '18.19.0'
 
@@ -42,6 +52,12 @@ jobs:
       - name: Build playground
         run: yarn build-prod
 
+      - name: Fix permissions
+        run: |
+          chmod -c -R +rX "dist/prod" | while read line; do
+            echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
@@ -50,11 +66,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-      actions: read
 
     environment:
       name: github-pages
