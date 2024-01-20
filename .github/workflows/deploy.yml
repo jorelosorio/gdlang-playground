@@ -17,7 +17,9 @@ jobs:
 
       - name: Read GDLang Version
         id: read-version
-        run: echo "::set-output name=GDLANG_VERSION::$(cat gdlang.version)"
+        run: |
+          GDLANG_VERSION=$(cat gdlang.version)
+          echo "GDLANG_VERSION=$GDLANG_VERSION" >> $GITHUB_ENV
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
