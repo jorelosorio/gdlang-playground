@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  path:
+  paths:
     - 'gdlang.version'
   workflow_dispatch:
 
