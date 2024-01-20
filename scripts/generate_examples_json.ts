@@ -27,6 +27,6 @@ function getGdFiles(dir: string, baseDir: string = ''): FolderStructure[] {
   return dirs;
 }
 
-const folderStructure = getGdFiles('./.downloads/examples');
+const folderStructure = getGdFiles('./.gen/examples');
 
 writeFileSync('./.gen/examples.json', JSON.stringify(folderStructure, null, 2));
