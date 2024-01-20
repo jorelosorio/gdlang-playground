@@ -13,6 +13,8 @@ echo "Downloading $URL.."
 
 wget -P .downloads $URL
 
+mkdir -p .gen
+
 tar -xzf .downloads/gdlang_${GDLangVersion}_js_wasm.tar.gz -C .gen
 
 rm .downloads/gdlang_${GDLangVersion}_js_wasm.tar.gz
