@@ -26,7 +26,7 @@ export const EditorOptions: monaco.editor.IStandaloneEditorConstructionOptions =
     value: '',
     theme: GDLangTheme,
     language: GDLangId,
-    fontSize: 20,
+    fontSize: 16,
     fontFamily: 'Fira Code',
     fontLigatures: true,
     minimap: { enabled: false },

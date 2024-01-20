@@ -6,7 +6,7 @@ body {
   padding: 0;
   font-family: 'Fira Code', monospace;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .playground {
@@ -29,13 +29,15 @@ body {
   display: inline-block;
 }
 
-.header .title span {
+.header .title .subtitle {
   font-size: 14px;
+  margin-left: 5pt;
 }
 
 .header .title h2 {
   margin: 0;
   padding: 0;
+  font-size: 28pt;
 }
 
 .header .links {
