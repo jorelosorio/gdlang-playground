@@ -6,7 +6,7 @@
     "download_gdlang_wasm": "./scripts/download_gdlang_wasm.sh",
     "generate_examples_json": "ts-node ./scripts/generate_examples_json.ts",
     "copy_dependencies": "./scripts/copy_dependencies.sh",
-    "install_dependencies": "yarn download_gdlang_wasm $0 && yarn generate_examples_json && yarn copy_dependencies",
+    "install_dependencies": "yarn download_gdlang_wasm \"$@\" && yarn generate_examples_json && yarn copy_dependencies",
     "build-dev": "webpack --config-name playground --mode development",
     "build-prod": "webpack --config-name playground --mode production",
     "start": "webpack serve --config-name playground --mode development",
