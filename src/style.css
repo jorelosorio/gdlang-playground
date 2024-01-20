@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', monospace;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.playground {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  padding: 10pt;
+  font-size: 20pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+.header .title * {
+  display: inline-block;
+}
+
+.header .title span {
+  font-size: 14px;
+}
+
+.header .title h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.header .links {
+  font-size: 18px;
+}
+
+.header .links a {
+  color: darkslategray;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 5pt 10pt;
+}
+
+.header .links a:hover {
+  background-color: #f4e8e8;
+  border-radius: 5px;
+  padding: 5pt 10pt;
+}
+
+.tag {
+  background-color: #f4e8e8;
+  border-radius: 5px;
+  padding: 1pt 5pt;
+}
+
+.ide {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.toolbar {
+  padding: 5pt 10pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  border-right: none;
+}
+
+.buttons-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10pt;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.button {
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+  padding: 4pt 12pt;
+  cursor: pointer;
+  background-color: aquamarine;
+  color: darkslategray;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#console,
+#editor {
+  flex: 1;
+}
+
+#examples-dropdown {
+  background-color: #fff;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+  padding: 5pt 10pt;
+}

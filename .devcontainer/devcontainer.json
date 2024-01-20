@@ -1,0 +1,10 @@
+{
+  "name": "GDLang-Playground",
+  "dockerFile": "../Dockerfile",
+  "postCreateCommand": "yarn install",
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode"],
+    },
+  },
+}

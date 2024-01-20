@@ -1,0 +1,7 @@
+.yarn
+./dist/
+./node_modules/
+./.gen/
+./.downloads/
+LICENSE.md
+README.md
